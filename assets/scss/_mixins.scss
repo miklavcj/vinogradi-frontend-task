@@ -1,0 +1,40 @@
+@mixin vineyard-body {
+  height: 300px;
+  margin: 50px 50px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin vineyard-main {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin vineyard-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin vineyard-h2 {
+  font-size: 42px;
+  margin: 20px 0;
+}
+
+@mixin vineyard-h3 {
+  margin: 0;
+  font-size: 22px;
+  color: #d3a6a3;
+  line-height: 1.2em;
+}
+
+@mixin vineyard-p {
+  margin-top: 150px;
+  font-size: 18px;
+  width: 55%;
+  line-height: 1.5em;
+}

@@ -2,7 +2,7 @@
   <div class="vinograd">
     <div class="main">
       <div class="icon">
-        <img src="../../static/images/Hrib.svg" alt="Icon for Hrib vineyard" />
+        <img src="../../assets/images/Hrib.svg" alt="Icon for Hrib vineyard" />
         <h2>{{ hrib.name }}</h2>
       </div>
       <h3>terase, z obilico <br />sonca in juzno lego</h3>

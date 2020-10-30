@@ -3,7 +3,7 @@
     <div class="main">
       <div class="icon">
         <img
-          src="../../static/images/Rebisce.svg"
+          src="../../assets/images/Rebisce.svg"
           alt="Icon for Rebisce vineyard"
         />
         <h2>{{ rebisce.name }}</h2>

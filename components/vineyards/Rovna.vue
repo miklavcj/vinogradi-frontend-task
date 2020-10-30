@@ -3,7 +3,7 @@
     <div class="main">
       <div class="icon">
         <img
-          src="../../static/images/Rovna.svg"
+          src="../../assets/images/Rovna.svg"
           alt="Icon for Rovna vineyard"
         />
         <h2>{{ rovna.name }}</h2>

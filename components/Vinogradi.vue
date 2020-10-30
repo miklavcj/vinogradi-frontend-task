@@ -7,7 +7,7 @@
           :class="{ svgIconActive: showVineyard === 'rebisce' }"
           @click="changeVineyard(vinogradi.rebisce.show)"
         >
-          <img src="../static/images/Rebisce.svg" alt="Rebisce vineyard icon" />
+          <img src="../assets/images/Rebisce.svg" alt="Rebisce vineyard icon" />
           <p>Rebišče</p>
         </div>
         <div class="tr" :class="{ trActive: showVineyard === 'rebisce' }"></div>
@@ -20,7 +20,7 @@
           @click="changeVineyard(vinogradi.leskovca.show)"
         >
           <img
-            src="../static/images/Leskovca.svg"
+            src="../assets/images/Leskovca.svg"
             alt="Leskovca vineyard icon"
           />
           <p>Leskovca</p>
@@ -37,7 +37,7 @@
           :class="{ svgIconActive: showVineyard === 'rovna' }"
           @click="changeVineyard(vinogradi.rovna.show)"
         >
-          <img src="../static/images/Rovna.svg" alt="Rovna vineyard icon" />
+          <img src="../assets/images/Rovna.svg" alt="Rovna vineyard icon" />
           <p>Rovna</p>
         </div>
         <div class="tr" :class="{ trActive: showVineyard === 'rovna' }"></div>
@@ -49,7 +49,7 @@
           :class="{ svgIconActive: showVineyard === 'hrbec' }"
           @click="changeVineyard(vinogradi.hrbec.show)"
         >
-          <img src="../static/images/Hrbec.svg" alt="Hrbec vineyard icon" />
+          <img src="../assets/images/Hrbec.svg" alt="Hrbec vineyard icon" />
           <p>Hrbec</p>
         </div>
         <div class="tr" :class="{ trActive: showVineyard === 'hrbec' }"></div>
@@ -61,7 +61,7 @@
           :class="{ svgIconActive: showVineyard === 'hrib' }"
           @click="changeVineyard(vinogradi.hrib.show)"
         >
-          <img src="../static/images/Hrib.svg" alt="Hrib vineyard icon" />
+          <img src="../assets/images/Hrib.svg" alt="Hrib vineyard icon" />
           <p>Hrib</p>
         </div>
         <div class="tr" :class="{ trActive: showVineyard === 'hrib' }"></div>
@@ -73,7 +73,7 @@
           :class="{ svgIconActive: showVineyard === 'glinsek' }"
           @click="changeVineyard(vinogradi.glinsek.show)"
         >
-          <img src="../static/images/Glinsek.svg" alt="Glinsek vineyard icon" />
+          <img src="../assets/images/Glinsek.svg" alt="Glinsek vineyard icon" />
           <p>Glinšek</p>
         </div>
         <div class="tr" :class="{ trActive: showVineyard === 'glinsek' }"></div>
@@ -90,12 +90,12 @@
 </template>
 
 <script>
-import Rebisce from "../components/vineyards/Rebisce";
-import Leskovca from "../components/vineyards/Leskovca";
-import Rovna from "../components/vineyards/Rovna";
-import Hrbec from "../components/vineyards/Hrbec";
-import Hrib from "../components/vineyards/Hrib";
-import Glinsek from "../components/vineyards/Glinsek";
+import Rebisce from "./vineyards/Rebisce";
+import Leskovca from "./vineyards/Leskovca";
+import Rovna from "./vineyards/Rovna";
+import Hrbec from "./vineyards/Hrbec";
+import Hrib from "./vineyards/Hrib";
+import Glinsek from "./vineyards/Glinsek";
 
 export default {
   components: {
@@ -128,6 +128,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/scss/mixins";
+@import "../assets/scss/variables";
+
 .imgContainer {
   display: flex;
   justify-content: space-between;
@@ -136,7 +139,7 @@ export default {
   padding: 0 100px;
 
   height: 1050px;
-  background-image: url("../static/images/vinograd.jpg");
+  background-image: url("../assets/images/vinograd.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -145,6 +148,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-right: 30px;
 
     .svgIcon {
       display: flex;
@@ -203,6 +207,69 @@ export default {
 
   p {
     margin-top: 20px;
+  }
+}
+
+@include breakpoint(1000px) {
+  .imgContainer {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    padding-top: 20px;
+    margin-top: 20px;
+
+    .iconContainer {
+      justify-content: space-around;
+
+      .svgIcon {
+        img {
+          height: 50px;
+        }
+      }
+
+      .tr {
+        display: none;
+      }
+    }
+
+    p {
+      margin-top: 20px;
+    }
+  }
+}
+
+@include breakpoint(600px) {
+  .imgContainer {
+    background-image: none;
+    background-color: $secondary;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    padding-top: 20px;
+    margin-top: 20px;
+
+    .iconContainer {
+      justify-content: space-around;
+
+      .svgIcon {
+        font-size: 25px;
+
+        img {
+          height: 50px;
+        }
+      }
+      .svgIconActive {
+        img {
+          filter: brightness(30%);
+        }
+      }
+    }
   }
 }
 </style>

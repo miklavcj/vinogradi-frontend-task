@@ -1,6 +1,9 @@
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: "static",
+  router: {
+    base: "/vinogradi/"
+  },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -22,6 +25,10 @@ export default {
           "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       }
     ]
+  },
+
+  generate: {
+    fallback: "404.html"
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)

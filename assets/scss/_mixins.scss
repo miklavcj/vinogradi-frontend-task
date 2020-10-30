@@ -5,6 +5,12 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @include breakpoint(800px) {
+    flex-direction: column;
+    height: 100%;
+    margin: 20px 0 auto;
+  }
 }
 
 @mixin vineyard-main {
@@ -12,6 +18,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @include breakpoint(800px) {
+    width: 80%;
+    justify-content: space-between;
+  }
 }
 
 @mixin vineyard-icon {
@@ -23,6 +34,8 @@
 @mixin vineyard-h2 {
   font-size: 42px;
   margin: 20px 0;
+
+  @include breakpoint(600px);
 }
 
 @mixin vineyard-h3 {
@@ -30,11 +43,36 @@
   font-size: 22px;
   color: #d3a6a3;
   line-height: 1.2em;
+
+  @include breakpoint(600px) {
+    font-size: 20px;
+  }
 }
 
 @mixin vineyard-p {
   margin-top: 150px;
+  margin-left: 50px;
   font-size: 18px;
   width: 55%;
   line-height: 1.5em;
+
+  @include breakpoint(800px) {
+    margin: 20px auto 40px;
+    width: 80%;
+    font-size: 18px;
+    text-align: justify;
+  }
+
+  @include breakpoint(600px) {
+    margin: 20px auto 40px;
+    width: 80%;
+    font-size: 14px;
+    text-align: justify;
+  }
+}
+
+@mixin breakpoint($size) {
+  @media (max-width: $size) {
+    @content;
+  }
 }

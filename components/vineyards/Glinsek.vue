@@ -3,7 +3,7 @@
     <div class="main">
       <div class="icon">
         <img
-          src="../../static/images/Glinsek.svg"
+          src="../../assets/images/Glinsek.svg"
           alt="Icon for Glinsek vineyard"
         />
         <h2>{{ glinsek.name }}</h2>

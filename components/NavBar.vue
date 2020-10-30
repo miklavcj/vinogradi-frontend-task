@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="navContainer">
-      <img src="../static/images/Logo.svg" alt="Ana Belle Logo" />
+      <img src="../assets/images/Logo.svg" alt="Ana Belle Logo" />
+
       <ul class="links">
         <a v-for="link in links" :key="link.name" :href="link.url" class="link">
           <li :class="{ active: activeLink === link.name }">
@@ -9,7 +10,6 @@
           </li></a
         >
       </ul>
-
       <ul class="languages">
         <a v-for="item in languages" :key="item.language" :href="item.url">
           <li :class="{ active: lang === item.language }">
@@ -18,11 +18,22 @@
         >
       </ul>
     </div>
+    <Dropdown
+      :links="links"
+      :languages="languages"
+      :activeLink="activeLink"
+      :lang="lang"
+      class="disableOnBig"
+    />
   </div>
 </template>
 
 <script>
+import Dropdown from "./Dropdown";
 export default {
+  components: {
+    Dropdown,
+  },
   name: "NavBar",
   data() {
     return {
@@ -47,6 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/scss/variables";
+@import "../assets/scss/mixins";
 
 .navContainer {
   width: 90%;
@@ -55,6 +67,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include breakpoint(800px) {
+    display: none;
+  }
 
   a {
     text-decoration: none;
@@ -80,6 +96,26 @@ export default {
     margin: 0 auto;
     text-align: center;
     align-self: center;
+
+    li {
+      margin-right: 20px;
+    }
+  }
+
+  .active {
+    color: $active;
+  }
+
+  .dropdown {
+    display: none;
+  }
+}
+
+.languages {
+  li {
+    font-size: 18px;
+    color: $grey;
+    margin: 5px 0;
   }
 
   .active {
@@ -87,15 +123,10 @@ export default {
   }
 }
 
-.languages {
-  li {
-    font-size: 18px;
-    color: #aeadae;
-    margin: 5px 0;
-  }
-
-  .active {
-    color: $active;
+.disableOnBig {
+  display: none;
+  @include breakpoint(800px) {
+    display: block;
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="main">
       <div class="icon">
         <img
-          src="../../static/images/Hrbec.svg"
+          src="../../assets/images/Hrbec.svg"
           alt="Icon for Hrbec vineyard"
         />
         <h2>{{ hrbec.name }}</h2>

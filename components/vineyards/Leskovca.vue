@@ -3,7 +3,7 @@
     <div class="main">
       <div class="icon">
         <img
-          src="../../static/images/Leskovca.svg"
+          src="../../assets/images/Leskovca.svg"
           alt="Icon for Lescovca vineyard"
         />
         <h2>{{ leskovca.name }}</h2>

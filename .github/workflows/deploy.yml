@@ -18,7 +18,7 @@ jobs:
 
       -name: Deploy
       -uses: JamesIves/github-pages-deploy-action@release/v3.7.1
-        -with: 
+        with: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
           REPOSITORY_NAME: git@github.com:miklavcj/vinogradi.git
           VINOGRADI_ACCESS: ${{ secrets.VINOGRADI_ACCESS}}

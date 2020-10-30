@@ -57,7 +57,6 @@ export default {
 
   .menu {
     background-color: #fff;
-
     position: absolute;
     width: 100%;
     max-height: 0;
@@ -170,31 +169,6 @@ export default {
   .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
   .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
-  }
-}
-
-/* 48em = 768px */
-
-@media (min-width: 800px) {
-  .dropdown li {
-    float: left;
-  }
-
-  .dropdown li a {
-    padding: 20px 30px;
-  }
-  .dropdown .menu {
-    clear: none;
-    float: right;
-  }
-
-  .dropdown .menu-icon {
-    display: none;
-  }
-
-  .dropdown .secondary {
-    clear: none;
-    float: right;
   }
 }
 </style>

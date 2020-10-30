@@ -260,6 +260,14 @@ export default {
       .svgIcon {
         font-size: 25px;
 
+        &:hover {
+          cursor: pointer;
+
+          img {
+            filter: brightness(30%);
+          }
+        }
+
         img {
           height: 50px;
         }

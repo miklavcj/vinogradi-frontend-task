@@ -77,6 +77,9 @@ export default {
     list-style-type: none;
     margin: 25px 0;
   }
+  a:hover {
+    color: $secondary;
+  }
 
   img {
     max-width: 250px;
@@ -116,6 +119,9 @@ export default {
     font-size: 18px;
     color: $grey;
     margin: 5px 0;
+  }
+  li:hover {
+    color: $secondary;
   }
 
   .active {

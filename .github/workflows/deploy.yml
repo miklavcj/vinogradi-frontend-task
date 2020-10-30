@@ -10,12 +10,12 @@ jobs:
     steps:
       -uses: actions/checkout@master 
       -uses: actions/setup-node@master
-        with:
+      with:
         node-version: 12
       -run: npm ci
       -run: npm run generate
       -uses: JamesIves/github-pages-deploy-action@release/3.7.1
-        with: 
+      with: 
  	        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
           REPOSITORY_NAME: git@github.com:miklavcj/vinogradi.git
           VINOGRADI_ACCESS: ${{ secrets.VINOGRADI_ACCESS}}

@@ -4,24 +4,20 @@ on:
   push:
     branches: [master]
 
-
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      -uses: actions/checkout@master     
+      - name: Checkout
+        uses: actions/checkout@v1
 
-      -name: install and build
+      - name: Clean Install dependencies and Build
         run: |
           npm install
           npm run generate
-
-      -name: Deploy
-        uses: JamesIves/github-pages-deploy-action@release/3.7.1
-        with: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
-          REPOSITORY_NAME: git@github.com:miklavcj/vinogradi.git
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
           VINOGRADI_ACCESS: ${{ secrets.VINOGRADI_ACCESS}}
           BRANCH: gh-pages
           FOLDER: dist
-          CLEAN: true

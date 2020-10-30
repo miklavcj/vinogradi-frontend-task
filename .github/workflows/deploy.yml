@@ -5,20 +5,18 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Clean Install dependencies and Build
-        run: |
-          npm install
-          npm run generate
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      -uses: actions/checkout@master 
+      -uses: actions/setup-node@master
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+        node-version: 12
+      -run: npm ci
+      -run: npm run generate
+      -uses: JamesIves/github-pages-deploy-action@release/3.7.1
+        with: 
+ 	        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
           REPOSITORY_NAME: git@github.com:miklavcj/vinogradi.git
           VINOGRADI_ACCESS: ${{ secrets.VINOGRADI_ACCESS}}
           BRANCH: gh-pages

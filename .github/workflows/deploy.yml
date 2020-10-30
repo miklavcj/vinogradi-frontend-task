@@ -9,12 +9,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      -uses: actions/checkout@v2
-        
+      -uses: actions/checkout@master     
 
       -name: install and build
-        run: npm ci
-        run: npm run generate
+        run: |
+          npm ci
+          npm run generate
 
       -name: Deploy
         uses: JamesIves/github-pages-deploy-action@release/v3.7.1

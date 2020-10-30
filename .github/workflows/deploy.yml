@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+        
 
       -name: install and build
         run: npm ci

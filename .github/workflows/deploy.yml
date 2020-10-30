@@ -15,10 +15,10 @@ jobs:
       -run: npm ci
       -run: npm run generate
       -uses: JamesIves/github-pages-deploy-action@release/3.7.1
-      with: 
- 	        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
-          REPOSITORY_NAME: git@github.com:miklavcj/vinogradi.git
-          VINOGRADI_ACCESS: ${{ secrets.VINOGRADI_ACCESS}}
-          BRANCH: gh-pages
-          FOLDER: dist
-          CLEAN: true
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+        REPOSITORY_NAME: git@github.com:miklavcj/vinogradi.git
+        VINOGRADI_ACCESS: ${{ secrets.VINOGRADI_ACCESS}}
+        BRANCH: gh-pages
+        FOLDER: dist
+        CLEAN: true

@@ -13,14 +13,15 @@ jobs:
 
       -name: install and build
         run: |
-          npm ci
+          npm install
           npm run generate
 
       -name: Deploy
-        uses: JamesIves/github-pages-deploy-action@release/v3.7.1
+        uses: JamesIves/github-pages-deploy-action@release/3.7.1
         with: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
           REPOSITORY_NAME: git@github.com:miklavcj/vinogradi.git
           VINOGRADI_ACCESS: ${{ secrets.VINOGRADI_ACCESS}}
           BRANCH: gh-pages
           FOLDER: dist
+          CLEAN: true
